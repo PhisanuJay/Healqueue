@@ -1,0 +1,257 @@
+/* Navbar.css */
+
+.navbar {
+  position: absolute;
+  top: -2rem;
+  left: 0;
+  right: 0;
+  background: transparent;
+  backdrop-filter: none;
+  padding: 2rem 3rem;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.navbar-mini {
+  position: fixed;
+  top: 20px;
+  left: auto;
+  right: 20px;
+  transform: none;
+  background: rgba(217, 106, 122, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: auto;
+  max-width: 500px;
+}
+
+.navbar-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-mini .navbar-container {
+  justify-content: center;
+  max-width: 100%;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  height: 180px;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+.navbar-mini .logo-image {
+  height: 45px;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 3rem;
+  align-items: center;
+}
+
+.navbar-mini .navbar-menu {
+  gap: 2rem;
+}
+
+.navbar-item {
+  position: relative;
+}
+
+.navbar-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  letter-spacing: 0.5px;
+  display: block;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Find Doctor Page Navbar */
+.find-doctor-nav {
+  background: #D96A7A;
+  backdrop-filter: none;
+  padding: 1rem 2rem;
+  top: 0;
+}
+
+.find-doctor-nav .navbar-container {
+  padding: 0 1.5rem;
+}
+
+.find-doctor-nav .navbar-logo .logo-image {
+  height: 60px;
+}
+
+.find-doctor-nav .navbar-menu {
+  gap: 1.5rem;
+}
+
+.find-doctor-nav .navbar-link {
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem;
+}
+
+.find-doctor-nav .navbar-link::after {
+  background-color: #ffffff;
+}
+
+.find-doctor-nav.navbar-mini {
+  background: #D96A7A;
+  padding: 0.5rem 1.2rem;
+}
+
+.find-doctor-nav.navbar-mini .navbar-link {
+  color: #ffffff;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.7rem;
+}
+
+.find-doctor-nav.navbar-mini .navbar-menu {
+  gap: 1rem;
+}
+
+.navbar-link.active {
+  background-color: transparent;
+  font-weight: 600;
+}
+
+.navbar-mini .navbar-link {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+}
+
+.navbar-link:hover {
+  background-color: transparent;
+  transform: translateY(-2px);
+}
+
+.navbar-mini .navbar-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-mini .navbar-link.active {
+  background-color: transparent;
+}
+
+.navbar-mini .navbar-link.active:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.navbar-mini .navbar-link::after {
+  background-color: #ffffff;
+}
+
+.navbar-link:hover::after {
+  width: 80%;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .navbar-container {
+    padding: 0 2rem;
+  }
+  
+  .navbar {
+    top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 2rem;
+  }
+  
+  .navbar {
+    top: 0;
+  }
+  
+  .navbar-menu {
+    gap: 1rem;
+  }
+  
+  .navbar-link {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .navbar-mini {
+    max-width: 90%;
+    padding: 0.6rem 1rem;
+  }
+  
+  .navbar-mini .navbar-menu {
+    gap: 0.8rem;
+  }
+  
+  .logo-image {
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 1rem;
+    top: 0;
+  }
+  
+  .navbar-mini {
+    padding: 0.5rem 0.8rem;
+    max-width: 95%;
+  }
+  
+  .navbar-menu {
+    gap: 0.5rem;
+  }
+  
+  .navbar-mini .navbar-menu {
+    gap: 0.5rem;
+  }
+  
+  .navbar-link {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.5rem;
+  }
+  
+  .navbar-mini .navbar-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+  }
+}

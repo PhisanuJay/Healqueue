@@ -1,23 +1,30 @@
 import './App.css'
-import Header from './components/Header'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
 import Home from './paegs/Home/Home'
+import FindDoctor from './paegs/FindDoctor/FindDoctor'
+import Appointment from './paegs/Appointment/Appointment'
 import Footer from './components/Footer'
+import ChatBot from './components/ChatBot'
 
 function App() {
-  
-
   return (
-    <div className="App">
-      <Header /> {/* 2. วาง Header ไว้นอก Home */}
-      
-      {/* 3. สร้าง main wrapper เพื่อจัดการ "เนื้อหา" */}
-      <main className="main-content">
-        <Home />
-        {/* ในอนาคตถ้ามี React Router หน้ารอื่นๆ ก็จะมาแทนที่ Home ตรงนี้ */}
-      </main>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/find-doctor" element={<FindDoctor />} />
+            <Route path="/appointment" element={<Appointment />} />
+          </Routes>
+        </main>
 
         <Footer />
-    </div>
+        <ChatBot />
+      </div>
+    </BrowserRouter>
   )
 }
 
