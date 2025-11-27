@@ -38,12 +38,14 @@ const Navbar = () => {
   const menuItems = isScrolled ? miniMenuItems : normalMenuItems;
 
   const isFindDoctorPage = location.pathname === '/find-doctor';
-  const logoSrc = isFindDoctorPage 
+  const isAppointmentPage = location.pathname === '/appointment';
+  const isSpecialPage = isFindDoctorPage || isAppointmentPage;
+  const logoSrc = isSpecialPage 
     ? '/src/assets/pic/BHQ-Logo23.png' 
     : '/src/assets/footer/sdfdsf 2.png';
 
   return (
-    <nav className={`navbar ${isScrolled ? 'navbar-mini' : ''} ${isFindDoctorPage ? 'find-doctor-nav' : ''}`}>
+    <nav className={`navbar ${isScrolled ? 'navbar-mini' : ''} ${isSpecialPage ? 'find-doctor-nav' : ''}`}>
       <div className="navbar-container">
         {!isScrolled && (
           <Link to="/" className="navbar-logo">
