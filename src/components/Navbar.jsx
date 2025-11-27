@@ -21,11 +21,8 @@ const Navbar = () => {
 
   const normalMenuItems = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
     { name: 'Find Doctor', path: '/find-doctor' },
     { name: 'Appointment', path: '/appointment' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/contact' },
     { name: 'Login', path: '/login' }
   ];
   
